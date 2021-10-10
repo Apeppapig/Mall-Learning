@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "redis.key.prefix.authCode",
+      "type": "java.lang.String",
+      "description": "Description for redis.key.prefix.authCode."
+    },
+    {
+      "name": "jwt.tokenHead",
+      "type": "java.lang.String",
+      "description": "Description for jwt.tokenHead."
+    }
+  ] }
