@@ -7,6 +7,8 @@ import com.example.mall.mbg.model.UmsPermission;
 import com.example.mall.service.UmsAdminService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,8 @@ import java.util.Map;
 @Api(tags = "UmsAdminController", description = "后台用户管理")
 @RequestMapping("/admin")
 public class UmsAdminController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UmsAdminController.class);
+
     @Autowired
     private UmsAdminService adminService;
     @Value("${jwt.tokenHeader}")
@@ -46,6 +50,7 @@ public class UmsAdminController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam, BindingResult result) {
+        LOGGER.info("username:{}  password:{}", umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");

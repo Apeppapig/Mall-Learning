@@ -3,11 +3,8 @@ package com.example.mall.mbg.mapper;
 import com.example.mall.mbg.model.UmsAdminRoleRelation;
 import com.example.mall.mbg.model.UmsAdminRoleRelationExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface UmsAdminRoleRelationMapper {
     long countByExample(UmsAdminRoleRelationExample example);
 

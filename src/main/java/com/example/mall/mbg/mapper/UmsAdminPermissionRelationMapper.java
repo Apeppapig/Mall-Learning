@@ -3,10 +3,8 @@ package com.example.mall.mbg.mapper;
 import com.example.mall.mbg.model.UmsAdminPermissionRelation;
 import com.example.mall.mbg.model.UmsAdminPermissionRelationExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface UmsAdminPermissionRelationMapper {
     long countByExample(UmsAdminPermissionRelationExample example);
 
